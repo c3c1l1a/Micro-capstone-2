@@ -1,0 +1,6 @@
+@import './reset.css';
+@import './utility.css';
+
+body {
+  background-color: var(--clr-white);
+}
