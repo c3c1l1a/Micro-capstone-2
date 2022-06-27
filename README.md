@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Micro-capstone-2
 
 # Project Name : Microverse Capstone 2
 
@@ -16,6 +16,11 @@
 ## Live Demo (Coming soon)
 
 
+
+## Resources Used
+- Food API - https://foodish-api.herokuapp.com/
+- Resturant Design - https://www.behance.net/gallery/96647171/Foodie-Landing-Page?tracking_source=search_projects%7Cfood%20website%20
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
 ## Getting Started
 
