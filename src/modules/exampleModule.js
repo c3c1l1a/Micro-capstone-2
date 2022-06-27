@@ -11,7 +11,7 @@ function component() {
 
 document.body.appendChild(component());
 
-function testFunction(input){
+function testFunction(input) {
   return input;
 }
 
