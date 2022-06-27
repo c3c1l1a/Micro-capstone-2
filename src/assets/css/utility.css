@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&display=swap');
+
+:root {
+  --clr-primary: #ff9f0d;
+  --clr-white: #fff;
+  --ff-cairo: 'Cairo';
+  --gap: 1rem;
+}
+
+.bg-primary { background-color: var(--clr-primary); }
+.bg-white { background-color: var(--clr-white); }
+
+.clr-primary { color: var(--clr-primary); }
+
+.ff-cairo { font-family: var(--ff-cairo), sans-serif; }
