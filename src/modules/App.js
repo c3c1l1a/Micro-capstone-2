@@ -11,8 +11,16 @@ export default class {
 			   'Content-type': 'application/json; charset=UTF-8',
 			 },
 		});
-
 		this.id = await response.text();
+		this.#updateLocalStorage();
+	}
+
+	async populate(Card, num){
+		for (let i = 0; i < num; i++){
+			const card = new Card();
+			await card.fetchImage();
+			this.cards.push(card);
+		}
 		this.#updateLocalStorage();
 	}
 
@@ -22,7 +30,10 @@ export default class {
 				id: this.id,
 				cards: this.cards 
 			}
-			console.log(data);
+			localStorage.setItem('app', JSON.stringify(data));
+		} else {
+			const data = JSON.parse(localStorage.getItem('app'));
+			data.cards = this.cards;
 			localStorage.setItem('app', JSON.stringify(data));
 		}
 	}
