@@ -1,6 +1,8 @@
 import './assets/css/style.css';
 import './index.html';
 
-// import exampleModule from './modules/exampleModule.js';
+import App from './modules/App.js';
 
-// exampleModule();
+const app = new App();
+app.createNew();
+
