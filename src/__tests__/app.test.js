@@ -2,10 +2,18 @@
  * @jest-environment jsdom
  */
 
-import testFunction from '../modules/exampleModule.js';
+import fetchMock from 'jest-fetch-mock';
+import Card from '../modules/Card.js';
 
-describe('Making sure it works', () => {
-  it('should sum 1 plus 1', () => {
-    expect(testFunction('input')).toEqual('input');
+const card = new Card();
+
+fetchMock.enableMocks(); 
+
+describe('Load images from External API', () => {
+  it('Images are loaded from API', async () => {
+    fetch.mockResponseOnce(JSON.stringify({"image":"https://foodish-api.herokuapp.com/images/pizza/pizza43.jpg"})); /* Important bits */
+    await card.getImage();
+
+    expect(card.data.image).toEqual(JSON.parse(localStorage.getItem('data')).image);
   });
 });
