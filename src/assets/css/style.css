@@ -107,4 +107,9 @@ main {
   footer {
     margin: 2rem 10%;
   }
+
+  .comment-modal ::backdrop {
+    background-color: var(--clr-primary);
+    opacity: 0.2;
+  }
 }
