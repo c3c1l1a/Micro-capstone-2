@@ -4,3 +4,108 @@
 body {
   background-color: var(--clr-white);
 }
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.nav {
+  display: flex;
+}
+
+.menu {
+  display: none;
+}
+
+.menu a {
+  text-decoration: none;
+  font-family: var(--ff-cairo);
+}
+
+.logo {
+  display: none;
+}
+
+.book-now-button {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 50px;
+  padding: 20px;
+}
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:  10px;
+  padding: 20px;
+}
+
+.card-img {
+  width:  100%;
+}
+
+
+
+.comments {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: orange;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  header {
+    justify-content: space-between;
+    padding: 20px 10%;
+  }
+
+  .nav {
+    gap: 70px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 10px;
+  }
+
+  .logo {
+    display: flex;
+  }
+
+  .book-now-button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: orange;
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+
+  main {
+    flex-direction: row;
+    justify-content: center;
+    gap:  50px;
+    padding: 0 10%;
+  }
+  .card-img {
+   
+  }
+}
+
