@@ -38,19 +38,18 @@ main {
   grid-row-gap: 50px;
   padding: 20px;
 }
+
 .card-details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:  10px;
+  gap: 10px;
   padding: 20px;
 }
 
 .card-img {
-  width:  100%;
+  width: 100%;
 }
-
-
 
 .comments {
   display: flex;
@@ -61,7 +60,6 @@ main {
   border-radius: 20px;
   padding: 10px 20px;
 }
-
 
 @media (min-width: 768px) {
   .hamburger-menu {
@@ -101,11 +99,7 @@ main {
   main {
     flex-direction: row;
     justify-content: center;
-    gap:  50px;
+    gap: 50px;
     padding: 0 10%;
   }
-  .card-img {
-   
-  }
 }
-

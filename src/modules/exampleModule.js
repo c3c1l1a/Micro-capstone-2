@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 function testFunction(input) {
   return input;
 }
