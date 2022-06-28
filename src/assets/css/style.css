@@ -3,6 +3,7 @@
 
 body {
   background-color: var(--clr-white);
+  font-family: var(--ff-cairo), sans-serif;
 }
 
 header {
@@ -101,5 +102,9 @@ main {
     justify-content: center;
     gap: 50px;
     padding: 0 10%;
+  }
+
+  footer {
+    margin: 2rem 10%;
   }
 }
