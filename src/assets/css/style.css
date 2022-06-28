@@ -3,4 +3,5 @@
 
 body {
   background-color: var(--clr-white);
+  font-family: var(--ff-cairo), sans-serif;
 }
