@@ -1,6 +1,11 @@
 import './assets/css/style.css';
 import './index.html';
 
-// import exampleModule from './modules/exampleModule.js';
+import App from './modules/App.js';
+import Card from './modules/Card.js';
 
-// exampleModule();
+const app = new App();
+
+app.createNew().then(() => {
+  app.populate(Card, 5);
+});
