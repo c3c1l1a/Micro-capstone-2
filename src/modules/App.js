@@ -22,7 +22,7 @@ export default class {
 			for (let i = 0; i < num; i++){
 				const card = new Card();
 				await card.fetchImage();
-				card.displayImage();
+				card.displayImage(this.id, i);
 				this.cards.push(card);
 			}
 			this.#updateLocalStorage();
@@ -30,7 +30,7 @@ export default class {
 			for (let i = 0; i < num; i++){
 				const card = new Card();
 				card.imageUrl = this.cards[i].imageUrl;
-				card.displayImage();
+				card.displayImage(this.id, i);
 			}
 		}	
 	}
