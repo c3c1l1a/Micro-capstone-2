@@ -9,7 +9,31 @@ import Card from '../modules/Card.js';
 const card = new Card();
 const app = new App();
 
-fetchMock.enableMocks(); 
+fetchMock.enableMocks();
+document.body.innerHTML = `
+  <main>
+      <template class="card-template">
+          <div class="card">
+              <div class="card-img-container">
+                  <img class="card-img" src="./assets/img/temp-plate.png">
+              </div>
+              <div class="card-details">
+                  <h2>Avacado salad</h2>
+                  <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                  </div>
+                  <a class="comments" href="#">Comments</a>    
+              </div>
+          </div>
+      </template>
+  </main>
+  
+`;
+
 
 describe('App', ()=> {
   it('Tests if a new app has been created in Involvement API and a unique stored in localStorage', async ()=> {
