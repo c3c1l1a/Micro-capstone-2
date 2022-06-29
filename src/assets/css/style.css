@@ -29,6 +29,12 @@ header {
   display: none;
 }
 
+.btn {
+  background-color: orange;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
 .book-now-button {
   display: none;
 }
@@ -62,6 +68,14 @@ main {
   padding: 10px 20px;
 }
 
+.comment-modal {
+  border: 1px solid;
+}
+
+.comment-form {
+  flex-direction: column;
+}
+
 @media (min-width: 768px) {
   .hamburger-menu {
     display: none;
@@ -92,9 +106,6 @@ main {
     align-content: center;
     justify-content: center;
     text-decoration: none;
-    background-color: orange;
-    border-radius: 20px;
-    padding: 10px 20px;
   }
 
   main {

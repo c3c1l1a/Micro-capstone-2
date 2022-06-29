@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="./assets/img/temp-logo.png">
+        <img class="logo icon" src="./assets/img/temp-logo.png">
         <div class="nav">
             <img class="hamburger-menu" src="./assets/img/hamburger-menu.png">
             <ul class="menu">
@@ -15,11 +15,11 @@
                 <li><a href="">Packages</a></li>
                 <li><a href="">About us</a></li>
             </ul>
-            <a class="book-now-button"href="#">Book now</a>
+            <a class=" btn book-now-button"href="#">Book now</a>
         </div>
     </header>
     <main>
-        <div class="card">
+        <div class="card" data-index="1">
             <img class="card-img" src="./assets/img/temp-plate.png">
             <div class="card-details">
                 <h2>Avacado salad</h2>
@@ -33,7 +33,7 @@
                 <span class="comments"> <img src="./assets/img/add-comment.png" alt="comments-icon"> </span>   
             </div>
         </div>
-        <div class="card">
+        <div class="card" data-index="2">
             <img class="card-img" src="./assets/img/temp-plate.png">
             <div class="card-details">
                 <h2>Avacado salad</h2>
@@ -47,7 +47,7 @@
                 <span class="comments"> <img src="./assets/img/add-comment.png" alt="comments-icon"> </span>    
             </div>
         </div>
-        <div class="card">
+        <div class="card" data-index="3">
             <img class="card-img" src="./assets/img/temp-plate.png">
             <div class="card-details">
                 <h2>Avacado salad</h2>
@@ -61,19 +61,16 @@
                 <span class="comments"> <img src="./assets/img/add-comment.png" alt="comments-icon"> </span>   
             </div>
         </div>
-        <dialog class="comment-modal">
-            <button class="close-modal">close modal</button>
-            <img src="./assets/img/temp-plate.png" alt="">
-            <h2>Avocado Salad</h2>
+        <dialog class="comment-modal container">
+            <span class="close-modal block icon"> <img src="./assets/img/close.png" alt="comments-icon"> </span>   
 
-            <h3>Comments</h3>
-            <ul>
-                <li> 03/11/2021 Cecelia: I love  it</li>
-            </ul>
-            <form method="dialog">
+            <div class="comment-item">
+               
+            </div>
+            <form class="comment-form flex" method="dialog">
                 <input type="text" placeholder="Your name">
                 <textarea name="" id="" cols="30" rows="10">You insights</textarea>
-                <button> Comment </button>
+                <button class="btn"> Comment </button>
             </form>
         </dialog>
     </main>

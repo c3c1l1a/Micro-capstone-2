@@ -14,3 +14,21 @@
 .clr-primary { color: var(--clr-primary); }
 
 .ff-cairo { font-family: var(--ff-cairo), sans-serif; }
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.block {
+  display: block;
+}
+
+.container > * {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.icon {
+  width: 100px;
+}
