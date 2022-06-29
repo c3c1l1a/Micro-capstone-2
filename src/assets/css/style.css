@@ -47,7 +47,6 @@ main {
   gap: 10px;
   box-shadow: -10px 10px 30px -15px gray;
   border-radius: 0 0 0 50px;
-
 }
 
 .card-details-header {
@@ -62,7 +61,7 @@ main {
   font-weight: bold;
 }
 
-.card-img-container{
+.card-img-container {
   width: 90vw;
   height: 90vw;
   overflow: hidden;
@@ -98,14 +97,13 @@ main {
   align-content: center;
   justify-content: center;
   text-decoration: none;
-  border:  solid 3px orange;
+  border: solid 3px orange;
   border-radius: 30px;
   padding: 5px 10px;
   font-size: 20px;
   font-weight: bold;
   color: black;
 }
-
 
 @media (min-width: 768px) {
   .hamburger-menu {
@@ -150,7 +148,7 @@ main {
     padding: 0 10%;
   }
 
-  .card-img-container{
+  .card-img-container {
     width: 20vw;
     height: 20vw;
     overflow: hidden;
@@ -161,7 +159,6 @@ main {
     height: 100%;
     object-fit: cover;
   }
-  
 
 
   footer {

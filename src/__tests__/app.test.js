@@ -34,18 +34,17 @@ document.body.innerHTML = `
   
 `;
 
-
-describe('App', ()=> {
-  it('Tests if a new app has been created in Involvement API and a unique stored in localStorage', async ()=> {
-    fetch.mockResponseOnce("ZyBiPoL5iOvL5CYLtNcq");
+describe('App', () => {
+  it('Tests if a new app has been created in Involvement API and a unique stored in localStorage', async () => {
+    fetch.mockResponseOnce('ZyBiPoL5iOvL5CYLtNcq');
     await app.createNew();
 
     expect(app.id).toEqual(JSON.parse(localStorage.getItem('app')).id);
     expect(fetch).toHaveBeenCalledTimes(1);
   });
 
-  it('Tests a card is added to localstorage', async ()=> {
-    fetch.mockResponseOnce(JSON.stringify({"image":"https://foodish-api.herokuapp.com/images/pizza/pizza43.jpg"})); 
+  it('Tests a card is added to localstorage', async () => {
+    fetch.mockResponseOnce(JSON.stringify({ image: 'https://foodish-api.herokuapp.com/images/pizza/pizza43.jpg' }));
     await app.populate(Card, 1);
 
     expect(app.cards.length).toEqual(1);
@@ -54,14 +53,11 @@ describe('App', ()=> {
   });
 });
 
-
-describe('Card', ()=> {
+describe('Card', () => {
   it('Tests that a cardimage is fetched from foodie API', async () => {
-    fetch.mockResponseOnce(JSON.stringify({"image":"https://foodish-api.herokuapp.com/images/pizza/pizza43.jpg"})); 
+    fetch.mockResponseOnce(JSON.stringify({ image: 'https://foodish-api.herokuapp.com/images/pizza/pizza43.jpg' }));
     await card.fetchImage();
 
     expect(card.imageUrl).toEqual('https://foodish-api.herokuapp.com/images/pizza/pizza43.jpg');
   });
 });
-
-
