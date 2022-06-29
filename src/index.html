@@ -19,48 +19,27 @@
         </div>
     </header>
     <main>
-        <div class="card" data-index="1">
-            <img class="card-img" src="./assets/img/temp-plate.png">
-            <div class="card-details">
-                <h2>Avacado salad</h2>
-                <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+        <template class="card-template" data-index="1">
+            <div class="card">
+                <div class="card-img-container">
+                    <img class="card-img" src="./assets/img/temp-plate.png">
                 </div>
-                <span class="comments"> <img src="./assets/img/add-comment.png" alt="comments-icon"> </span>   
-            </div>
-        </div>
-        <div class="card" data-index="2">
-            <img class="card-img" src="./assets/img/temp-plate.png">
-            <div class="card-details">
-                <h2>Avacado salad</h2>
-                <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                <div class="card-details">
+                    <div class="card-details-header">
+                        <h2>Avacado salad</h2>
+                        <h2>$20</h2>
+                        
+                    </div>
+                    <a class="comments" href="#">Comments</a>
+                    <div class="card-details-body">
+                        <div class="likes-container">
+                            <span class="likes">4</span>
+                            <i class="fa fa-solid fa-heart"></i>
+                        </div>   
+                    </div>
                 </div>
-                <span class="comments"> <img src="./assets/img/add-comment.png" alt="comments-icon"> </span>    
             </div>
-        </div>
-        <div class="card" data-index="3">
-            <img class="card-img" src="./assets/img/temp-plate.png">
-            <div class="card-details">
-                <h2>Avacado salad</h2>
-                <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-                <span class="comments"> <img src="./assets/img/add-comment.png" alt="comments-icon"> </span>   
-            </div>
-        </div>
+        </template>
         <dialog class="comment-modal container">
             <span class="close-modal block icon"> <img src="./assets/img/close.png" alt="comments-icon"> </span>   
 

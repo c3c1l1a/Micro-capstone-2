@@ -1,11 +1,19 @@
 import './assets/css/style.css';
 import './index.html';
 import Involvement from './modules/Involvement.js';
+import App from './modules/App.js';
+import Card from './modules/Card.js';
 
 const commentBtns = document.querySelectorAll('.comments');
 const commentModal = document.querySelector('.comment-modal');
 const closeComment = document.querySelector('.close-modal');
+
 const appInvolvement = new Involvement();
+const app = new App();
+
+app.createNew().then(() => {
+  app.populate(Card, 5);
+});
 
 if (typeof commentModal.showModal !== 'function') {
   commentModal.hidden = true;
@@ -32,6 +40,9 @@ commentBtns.forEach((commentBtn) => {
   });
 });
 
+
 closeComment.addEventListener('click', () => {
   commentModal.close();
-});
+})
+
+
