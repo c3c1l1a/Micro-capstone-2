@@ -1,6 +1,6 @@
 /**
- * @jest-environment jsdom
- */
+* @jest-environment jsdom
+*/
 
 import fetchMock from 'jest-fetch-mock';
 import App from '../modules/App.js';
