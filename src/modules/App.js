@@ -24,6 +24,8 @@ export default class {
         const card = new Card();
         await card.fetchImage();
         card.displayImage(this.id, i);
+        card.postLikesToAPI(this.id, i);
+        card.displayLikes(this.id, i);
         this.cards.push(card);
       }
       this.#updateLocalStorage();
@@ -32,6 +34,8 @@ export default class {
         const card = new Card();
         card.imageUrl = this.cards[i].imageUrl;
         card.displayImage(this.id, i);
+        card.postLikesToAPI(this.id, i);
+        card.displayLikes(this.id, i);
       }
     }
   }

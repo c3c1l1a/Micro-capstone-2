@@ -52,6 +52,7 @@ main {
 .card-details-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   width: 100%;
 }
@@ -64,9 +65,18 @@ main {
 .card-details-header i {
   font-size: 25px;
 }
+
+.likes-count-container {
+  background-color: #414141;
+  padding: 15px 8px;
+  border-radius: 50px;
+}
+
 sup {
+  color: #fff;
+  width: 14px;
   vertical-align: top;
-  font-size: smaller;
+  font-size: 14px;
 }
 
 .card-img-container {
@@ -91,12 +101,16 @@ sup {
   gap: 20px;
 }
 
-.likes-container {
+.likes-button {
   display: flex;
   background-color: orange;
   padding: 20px;
   gap: 5px;
   border-radius: 30px 0 0 0;
+}
+
+.likes-button:hover {
+  cursor: pointer;
 }
 
 .fa-plus {
@@ -107,8 +121,13 @@ sup {
   color: orange;
 }
 
-.likes-container i {
+.likes-button i {
   color: #fff;
+}
+
+.likes-button i:hover {
+  transform: scale(1.3);
+  transition-timing-function: ease-in-out;
 }
 
 .comments {
