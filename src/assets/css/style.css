@@ -51,14 +51,22 @@ main {
 
 .card-details-header {
   display: flex;
-  justify-content: space-evenly;
-  padding: 20px 0;
+  justify-content: space-between;
+  padding: 20px;
   width: 100%;
 }
 
 .card-details-header h2 {
   font-size: 20px;
   font-weight: bold;
+}
+
+.card-details-header i {
+  font-size: 25px;
+}
+sup {
+  vertical-align: top;
+  font-size: smaller;
 }
 
 .card-img-container {
@@ -77,7 +85,10 @@ main {
 .card-details-body {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 100%;
+  padding-left: 20px;
+  gap: 20px;
 }
 
 .likes-container {
@@ -88,8 +99,16 @@ main {
   border-radius: 30px 0 0 0;
 }
 
+.fa-plus {
+  font-size: 18px;
+}
+
+.fa-heart {
+  color: orange;
+}
+
 .likes-container i {
-  color: purple;
+  color: #fff;
 }
 
 .comments {
