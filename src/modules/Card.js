@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+import Involvement from "./Involvement.js";
+const involvement = new Involvement;
+
 export default class {
   constructor() {
     this.imageUrl = '';
@@ -19,6 +22,28 @@ export default class {
     const cardImg = card.querySelector('.card-img');
     cardImg.setAttribute('src', this.imageUrl);
 
+    const commentBtn = card.querySelector('.comments');
+    const commentModal = document.querySelector('.comment-modal');
+    commentBtn.addEventListener('click', async () => {
+      involvement.createComment(cardId, appId,'tomi-test','Good food')
+      let comments = await involvement.getComments('item1', 'UJJc2JkxSYRZShjFhmpd');
+      console.log(comments)
+      commentModal.children[1].innerHTML = `
+      <img src="${this.imageUrl}" alt="">
+        <h2>Avocado Salad</h2>
+        <h3>Comments</h3>
+        <ul>
+          <li> 03/11/2021 Cecelia: I love  it</li>
+        </ul>
+      `;
+      commentModal.show();
+    });
+    
+    commentModal.addEventListener('close', (e)=> {
+      console.log(cardId);
+      console.log(commentModal.returnValue)
+      // post comments
+    })
     // const stars = card.querySelectorAll('.fa-star');
     /* stars.forEach((node, index) => {
       node.addEventListener('click', async ()=>{
