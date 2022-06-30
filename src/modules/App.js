@@ -19,21 +19,16 @@ export default class {
   }
 
   async populate(Card, num) {
-    if (this.cards.length <= 0) {
-      for (let i = 0; i < num; i += 1) {
-        const card = new Card();
-        await card.fetchImage();
-        card.displayImage(this.id, i);
-        this.cards.push(card);
-      }
-      this.#updateLocalStorage();
-    } else {
-      for (let i = 0; i < num; i += 1) {
-        const card = new Card();
+    for (let i = 0; i < num; i += 1) {
+      const card = new Card();
+      if (this.cards.length <= i) {
+          await card.fetchImage();
+          this.cards.push(card);
+        }
         card.imageUrl = this.cards[i].imageUrl;
         card.displayImage(this.id, i);
-      }
     }
+    this.#updateLocalStorage();
   }
 
   #updateLocalStorage() {

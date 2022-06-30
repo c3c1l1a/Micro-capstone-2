@@ -5,9 +5,11 @@
 import fetchMock from 'jest-fetch-mock';
 import App from '../modules/App.js';
 import Card from '../modules/Card.js';
+import Involvement from '../modules/Involvement.js';
 
 const card = new Card();
 const app = new App();
+const involvement = new Involvement();
 
 fetchMock.enableMocks();
 document.body.innerHTML = `
@@ -61,3 +63,7 @@ describe('Card', () => {
     expect(card.imageUrl).toEqual('https://foodish-api.herokuapp.com/images/pizza/pizza43.jpg');
   });
 });
+
+describe('Involvement', ()=> {
+  
+})
