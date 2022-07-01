@@ -98,27 +98,50 @@ main {
   color: purple;
 }
 
-.comments {
+.btn-comment {
   display: flex;
   align-content: center;
   justify-content: center;
   text-decoration: none;
-  border: solid 3px orange;
+  border: solid 3px var(--clr-primary);
   border-radius: 30px;
   padding: 5px 10px;
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
   color: black;
 }
 
 .comment-modal {
-  border: 1px solid;
+  border: 1px solid var(--clr-primary);
+  border-radius: 0 50px 0 50px;
+  top: 25%;
+}
+
+dialog::backdrop {
+  background: var(--color-backdrop);
 }
 
 .comment-form {
   flex-direction: column;
 }
 
+.close-modal {
+  display: block;
+  position: relative;
+  right: -50%;
+}
+
+.comment-item {
+  width: 345px;
+}
+.comment-img {
+  height: 60vh;
+}
+
+.comment-container{
+  width: 80%;
+}
 @media (min-width: 768px) {
   .hamburger-menu {
     display: none;

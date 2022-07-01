@@ -47,5 +47,5 @@ table {
 	border-spacing: 0;
 }
 img, picture{
-	width: 100%;
+	object-fit: contain;
 }
