@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="./assets/img/temp-logo.png">
+        <img class="logo icon" src="./assets/img/temp-logo.png">
         <div class="nav">
             <img class="hamburger-menu" src="./assets/img/hamburger-menu.png">
             <ul class="menu">
@@ -15,7 +15,7 @@
                 <li><a href="">Packages</a></li>
                 <li><a href="">About us</a></li>
             </ul>
-            <a class="book-now-button"href="#">Book now</a>
+            <a class=" btn book-now-button"href="#">Book now</a>
         </div>
     </header>
     <main>
@@ -30,7 +30,7 @@
                         <h2>$20</h2>
                         
                     </div>
-                    <a class="comments" href="#">Comments</a>
+                    <span class="btn-comment block">Comments</span>
                     <div class="card-details-body">
                         <div class="likes-container">
                             <span class="likes">4</span>
@@ -40,6 +40,19 @@
                 </div>
             </div>
         </template>
+        <dialog class="comment-modal container">
+            <span class="close-modal block icon"> <img src="./assets/img/close.png" alt="comments-icon"> </span>   
+
+            <div class="comment-item">
+               
+            </div>
+            <form class="comment-form flex" method="dialog">
+                <h2 class="card-details-header">Add a Comment</h2>
+                <input name="name" class="form-input" type="text" placeholder="Your name">
+                <textarea class="form-input" name="comment" id="" cols="30" rows="10" placeholder="Your insights"></textarea>
+                <button id="commentBtn" class="btn"> Comment </button>
+            </form>
+        </dialog>
     </main>
     <footer>
         <span>Created by Microverse under CC license</span>
