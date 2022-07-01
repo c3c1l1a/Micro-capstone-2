@@ -46,7 +46,6 @@ export default class {
       const data = JSON.parse(localStorage.getItem('app'));
       this.id = data.id;
       if (data.cards.length > 0) {
-        console.log(this.cards);
         this.cards = data.cards;
         return;
       }

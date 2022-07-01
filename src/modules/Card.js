@@ -22,6 +22,9 @@ export default class {
     const cardImg = this.card.querySelector('.card-img');
     cardImg.setAttribute('src', this.imageUrl);
 
+    const cardTitle = this.card.querySelector('.card-title');
+    cardTitle.textContent = 'Dish '+ (cardId+1);
+
     mainTag.appendChild(this.card);
   }
 
