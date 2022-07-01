@@ -57,7 +57,7 @@ export default class {
          }
       });
 
-      this.displayLikes(appId, cardId);
+      await this.displayLikes(appId, cardId);
     });
   }
 
@@ -68,6 +68,7 @@ export default class {
     const contentType = response.headers.get("content-type");
     if (contentType && contentType.indexOf("application/json") !== -1) {
       const data = await response.json();
+
       data.forEach((item)=>{
         if (item.item_id === cardId){
           this.likes = item.likes;
