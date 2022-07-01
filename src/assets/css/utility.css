@@ -8,10 +8,10 @@
   --gap: 1rem;
 }
 
-:root,::backdrop {
+:root,
+::backdrop {
   --color-backdrop: red;
 }
-
 
 .bg-primary { background-color: var(--clr-primary); }
 .bg-white { background-color: var(--clr-white); }

@@ -5,8 +5,6 @@
 import fetchMock from 'jest-fetch-mock';
 import App from '../modules/App.js';
 import Card from '../modules/Card.js';
-import Involvement from '../modules/Involvement.js';
-
 
 fetchMock.enableMocks();
 document.body.innerHTML = `
@@ -54,8 +52,6 @@ document.body.innerHTML = `
 
 const card = new Card();
 const app = new App();
-const involvement = new Involvement();
-
 
 describe('App', () => {
   it('Tests if a new app has been created in Involvement API and a unique stored in localStorage', async () => {
@@ -83,12 +79,11 @@ describe('Card', () => {
     expect(card.imageUrl).toEqual('https://foodish-api.herokuapp.com/images/pizza/pizza43.jpg');
   });
 
-  it('Tests that likes are added via involve API', async ()=> {
+  it('Tests that likes are added via involve API', async () => {
     fetch.mockResponse(JSON.stringify({
-        "likes": 5,
-        "item_id": "item1"
-      }
-    ));
+      likes: 5,
+      item_id: 'item1',
+    }));
     await card.displayLikes('ZyBiPoL5iOvL5CYLtNcq', 1);
 
     expect(fetch).toHaveBeenCalledTimes(5);
@@ -96,6 +91,6 @@ describe('Card', () => {
   });
 });
 
-describe('Involvement', ()=> {
-  
-})
+describe('Involvement', () => {
+
+});

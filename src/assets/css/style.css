@@ -173,13 +173,15 @@ dialog::backdrop {
 .comment-item {
   width: 345px;
 }
+
 .comment-img {
   height: 60vh;
 }
 
-.comment-container{
+.comment-container {
   width: 80%;
 }
+
 @media (min-width: 768px) {
   .hamburger-menu {
     display: none;

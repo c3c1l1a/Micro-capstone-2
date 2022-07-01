@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable class-methods-use-this */
 
-import Involvement from "./Involvement.js";
+import Involvement from './Involvement.js';
 
 export default class {
   constructor() {
@@ -23,29 +24,29 @@ export default class {
     cardImg.setAttribute('src', this.imageUrl);
 
     const cardTitle = this.card.querySelector('.card-title');
-    cardTitle.textContent = 'Dish '+ (cardId+1);
+    cardTitle.textContent = `Dish ${cardId + 1}`;
 
     mainTag.appendChild(this.card);
   }
 
-  #createCardTemplate(){
+  #createCardTemplate() {
     const cardTemplate = document.querySelector('.card-template');
     const card = cardTemplate.content.firstElementChild.cloneNode(true);
     return card;
   }
 
-  #commentsDialogueTemplate(){
+  #commentsDialogueTemplate() {
     const commentsDialogueTemplate = document.querySelector('.comments-popup-template');
     const commentsDialogue = commentsDialogueTemplate.content.firstElementChild.cloneNode(true);
     return commentsDialogue;
   }
 
-  postLikesToAPI(appId, cardId){
+  postLikesToAPI(appId, cardId) {
     const mainTag = document.querySelector('main');
     const likesButton = this.card.querySelector('.likes-button');
-    likesButton.addEventListener('click', async (e)=>{
+    likesButton.addEventListener('click', async (e) => {
       e.preventDefault();
-      let endpoint = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'+ appId +'/likes/';
+      const endpoint = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes/`;
 
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -53,8 +54,8 @@ export default class {
           item_id: cardId,
         }),
         headers: {
-           'Content-type': 'application/json; charset=UTF-8',
-         }
+          'Content-type': 'application/json; charset=UTF-8',
+        },
       });
 
       await this.displayLikes(appId, cardId);
@@ -62,20 +63,20 @@ export default class {
   }
 
   async displayLikes(appId, cardId) {
-    let endpoint = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'+ appId +'/likes/';
+    const endpoint = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes/`;
     const response = await fetch(endpoint);
 
-    const contentType = response.headers.get("content-type");
-    if (contentType && contentType.indexOf("application/json") !== -1) {
+    const contentType = response.headers.get('content-type');
+    if (contentType && contentType.indexOf('application/json') !== -1) {
       const data = await response.json();
 
-      data.forEach((item)=>{
-        if (item.item_id === cardId){
+      data.forEach((item) => {
+        if (item.item_id === cardId) {
           this.likes = item.likes;
         }
       });
     }
-    
+
     const likesButton = this.card.querySelector('.likes-count');
     likesButton.textContent = this.likes;
   }
@@ -88,7 +89,7 @@ export default class {
 
     commentBtn.addEventListener('click', async () => {
       this.comments = await involvement.getComments(index, appId);
-      commentModal.children[1].innerHTML =`
+      commentModal.children[1].innerHTML = `
           <div class="comment-container card-img-container">
             <img class="card-img" src="${this.imageUrl}" alt="">
           </div>
@@ -96,13 +97,11 @@ export default class {
            <h3 class="card-details-header clr-primary">Comments</h3>
       `;
 
-      
-        const ul = document.createElement('ul');
-        console.log(this.comments);
-        this.comments.forEach((comment)=>{
-          ul.innerHTML +=   `<li> ${comment.creation_date}: ${comment.username} - ${comment.comment} </li>`
-        })
-        commentModal.children[1].appendChild(ul);
+      const ul = document.createElement('ul');
+      this.comments.forEach((comment) => {
+        ul.innerHTML += `<li> ${comment.creation_date}: ${comment.username} - ${comment.comment} </li>`;
+      });
+      commentModal.children[1].appendChild(ul);
       commentModal.show();
     });
 
@@ -112,35 +111,32 @@ export default class {
 
     const mainTag = document.querySelector('main');
     mainTag.appendChild(commentModal);
-
   }
 
-  async postComment(appId, cardId){
+  async postComment(appId, cardId) {
     const involvement = new Involvement();
     const commentModal = this.commentsDialogue;
-    let commentData = {};
+    const commentData = {};
     const submitComment = commentModal.querySelector('#commentBtn');
 
     const commentInputs = commentModal.querySelectorAll('.form-input');
-    commentInputs.forEach((input)=> {
-      input.addEventListener('change', (e)=>{
-          if (input.name === 'name'){
-            commentData.name = e.target.value;
-          }
-          if (input.name === 'comment'){
-            commentData.comment = e.target.value;
-          }
+    commentInputs.forEach((input) => {
+      input.addEventListener('change', (e) => {
+        if (input.name === 'name') {
+          commentData.name = e.target.value;
+        }
+        if (input.name === 'comment') {
+          commentData.comment = e.target.value;
+        }
         submitComment.value = JSON.stringify(commentData);
-      })
+      });
     });
 
-
-
-    commentModal.addEventListener('close', async (e)=> {
-      if (commentModal.returnValue){
-        const formData = JSON.parse(commentModal.returnValue)
-        if(formData.name){
-          await involvement.createComment(cardId, appId, formData.name, formData.comment)
+    commentModal.addEventListener('close', async (e) => {
+      if (commentModal.returnValue) {
+        const formData = JSON.parse(commentModal.returnValue);
+        if (formData.name) {
+          await involvement.createComment(cardId, appId, formData.name, formData.comment);
           this.comments = await involvement.getComments(cardId, appId);
         }
       }
