@@ -3,7 +3,6 @@ export default class {
   constructor() {
     this.id = '';
     this.cards = [];
-    this.commentModal = document.querySelector('.comment-modal');
   }
 
   async createNew() {
@@ -30,7 +29,8 @@ export default class {
         card.displayImage(this.id, i);
         card.postLikesToAPI(this.id, i);
         card.displayLikes(this.id, i);
-        card.displayComment(this.commentModal, i, this.id);
+        card.displayComment(i, this.id);
+        card.postComment(this.id, i, this.#updateLocalStorage.bind(this));
     }
     this.#updateLocalStorage();
   }
@@ -46,6 +46,7 @@ export default class {
       const data = JSON.parse(localStorage.getItem('app'));
       this.id = data.id;
       if (data.cards.length > 0) {
+        console.log(this.cards);
         this.cards = data.cards;
         return;
       }

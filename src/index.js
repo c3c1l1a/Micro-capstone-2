@@ -25,7 +25,7 @@ const app = new App();
 
 
 app.createNew().then(() => {
-  app.populate(Card, 5);
+  app.populate(Card, 6);
   /*const commentBtns = document.querySelectorAll('.btn-comment');  
   const commentInputs = document.querySelectorAll('.form-input');
   const submitComment = document.querySelector('#commentBtn');

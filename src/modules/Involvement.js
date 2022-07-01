@@ -35,10 +35,13 @@ export default class {
           'Content-type': 'application/json; charset=UTF-8',
         },
       });
-      const contentType = res.headers.get("content-type");
-      console.log(contentType);
+      if (!res.ok){
+        throw res;
+      }
       return res.json();
+
     } catch (error) {
+      console.log(error);
       return error;
     }
   }
