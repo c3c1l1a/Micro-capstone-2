@@ -87,9 +87,7 @@ export default class {
     const closeComment = this.commentsDialogue.querySelector('.close-modal');
 
     commentBtn.addEventListener('click', async () => {
-     
       this.comments = await involvement.getComments(index, appId);
-
       commentModal.children[1].innerHTML =`
           <div class="comment-container card-img-container">
             <img class="card-img" src="${this.imageUrl}" alt="">

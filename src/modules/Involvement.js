@@ -3,11 +3,6 @@ export default class {
     this.baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
   }
 
-  // #updateLocalStorage() {
-  //   if (localStorage.getItem('involvement').comments) {
-
-  //   }
-  // }
 
   async createComment(itemId, appId, username, comment) {
     try {

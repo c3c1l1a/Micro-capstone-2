@@ -14,6 +14,7 @@ export default class {
         },
       });
       this.id = await response.text();
+      this.id = 'ww6n6aXvcSq4LrvQeaoj';
     }
     this.#updateLocalStorage();
   }
