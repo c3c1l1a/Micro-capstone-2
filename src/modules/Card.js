@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+
+import Involvement from "./Involvement.js";
+
 export default class {
   constructor() {
     this.imageUrl = '';
@@ -16,24 +19,6 @@ export default class {
     const mainTag = document.querySelector('main');
     const cardImg = this.card.querySelector('.card-img');
     cardImg.setAttribute('src', this.imageUrl);
-
-    // const stars = card.querySelectorAll('.fa-star');
-    /* stars.forEach((node, index) => {
-      node.addEventListener('click', async ()=>{
-        let endpoint = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'+ appId +'/likes/';
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          body: JSON.stringify({
-            item_id: cardId,
-            likes:  index+1,
-          }),
-          headers: {
-             'Content-type': 'application/json; charset=UTF-8',
-           }
-        });
-        this.stars = index+1;
-      });
-    }); */
 
     mainTag.appendChild(this.card);
   }
@@ -79,8 +64,35 @@ export default class {
       });
     }
     
-
     const likesButton = this.card.querySelector('.likes-count');
     likesButton.textContent = this.likes;
+  }
+
+  async displayComment(commentModal, index, appId) {
+    const commentBtn = this.card.querySelector('.btn-comment');
+    const closeComment = document.querySelector('.close-modal');
+    const involvement = new Involvement();
+
+    commentBtn.addEventListener('click', async () => {
+      let comments = await involvement.getComments(index, appId);
+      commentModal.children[1].innerHTML =`
+          <div class="comment-container card-img-container">
+            <img class="card-img" src="${this.imageUrl}" alt="">
+          </div>
+          <h2 class="card-details-header">Avocado Salad</h2>
+           <h3 class="card-details-header clr-primary">Comments</h3>
+      `;
+      if (!comments.error){
+        [...comments].forEach((comment)=>{
+          ul.innerHTML +=   `<li> ${comment.creation_date}: ${comment.username} - ${comment.comment} </li>`
+        })
+        commentModal.children[1].appendChild(ul);
+      }
+      commentModal.show();
+    });
+
+    closeComment.addEventListener('click', () => {
+      commentModal.close();
+    });
   }
 }
