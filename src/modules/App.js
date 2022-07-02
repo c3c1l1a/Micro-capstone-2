@@ -3,7 +3,6 @@ export default class {
   constructor() {
     this.id = '';
     this.cards = [];
-    this.commentModal = document.querySelector('.comment-modal');
   }
 
   async createNew() {
@@ -15,6 +14,7 @@ export default class {
         },
       });
       this.id = await response.text();
+      this.id = 'ww6n6aXvcSq4LrvQeaoj';
     }
     this.#updateLocalStorage();
   }
@@ -23,14 +23,15 @@ export default class {
     for (let i = 0; i < num; i += 1) {
       const card = new Card();
       if (this.cards.length <= i) {
-          await card.fetchImage();
-          this.cards.push(card);
-        }
-        card.imageUrl = this.cards[i].imageUrl;
-        card.displayImage(this.id, i);
-        card.postLikesToAPI(this.id, i);
-        card.displayLikes(this.id, i);
-        card.displayComment(this.commentModal, i, this.id);
+        await card.fetchImage();
+        this.cards.push(card);
+      }
+      card.imageUrl = this.cards[i].imageUrl;
+      card.displayImage(this.id, i);
+      card.postLikesToAPI(this.id, i);
+      card.displayLikes(this.id, i);
+      card.displayComment(i, this.id);
+      card.postComment(this.id, i, this.#updateLocalStorage.bind(this));
     }
     this.#updateLocalStorage();
   }
