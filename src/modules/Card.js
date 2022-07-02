@@ -88,20 +88,21 @@ export default class {
     const closeComment = this.commentsDialogue.querySelector('.close-modal');
 
     commentBtn.addEventListener('click', async () => {
-      this.comments = await involvement.getComments(index, appId);
+      const comments = await involvement.getComments(index, appId);
       commentModal.children[1].innerHTML = `
           <div class="comment-container card-img-container">
             <img class="card-img" src="${this.imageUrl}" alt="">
           </div>
           <h2 class="card-details-header">Avocado Salad</h2>
-           <h3 class="card-details-header clr-primary">Comments</h3>
+           <h3 class="card-details-header clr-primary">Comments (${comments.length || 0})</h3>
       `;
-
-      const ul = document.createElement('ul');
-      this.comments.forEach((comment) => {
-        ul.innerHTML += `<li> ${comment.creation_date}: ${comment.username} - ${comment.comment} </li>`;
-      });
-      commentModal.children[1].appendChild(ul);
+      if (comments.length > 0) {
+        const ul = document.createElement('ul');
+        [...comments].forEach((comment) => {
+          ul.innerHTML += `<li> ${comment.creation_date}: ${comment.username} - ${comment.comment} </li>`;
+        });
+        commentModal.children[1].appendChild(ul);
+      }
       commentModal.show();
     });
 
@@ -137,7 +138,6 @@ export default class {
         const formData = JSON.parse(commentModal.returnValue);
         if (formData.name) {
           await involvement.createComment(cardId, appId, formData.name, formData.comment);
-          this.comments = await involvement.getComments(cardId, appId);
         }
       }
     });

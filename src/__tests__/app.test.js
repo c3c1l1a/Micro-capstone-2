@@ -89,8 +89,8 @@ describe('Card', () => {
     expect(fetch).toHaveBeenCalledTimes(5);
     expect(card.likes).toEqual(0);
   });
-});
 
-describe('Involvement', () => {
+  it('Test Comments count', () => {
 
+  });
 });
