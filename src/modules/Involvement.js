@@ -29,17 +29,12 @@ export default class {
   }
 
   async getComments(itemId,appId) {
-    try {
-      const res = await fetch(`${this.baseUrl}apps/${appId}/comments?item_id=${itemId}`, {
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      });
-      const contentType = res.headers.get("content-type");
-      console.log(contentType);
-      return res.json();
-    } catch (error) {
-      return error;
-    }
+      try{
+        const res = await fetch(`${this.baseUrl}apps/${appId}/comments?item_id=${itemId}`);
+        return res.json();
+      }
+      catch(error){
+        return [].push(error);
+      }
   }
 }
