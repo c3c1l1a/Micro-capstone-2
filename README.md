@@ -1,7 +1,7 @@
 # Micro-capstone-2
 
 # Project Name : Microverse Capstone 2
-
+This a single page food app where you can comment and like your favourite meal. 
 >   
 >
 >
@@ -15,6 +15,7 @@
 
 ## Live Demo (Coming soon)
 
+## [Project presentation](https://drive.google.com/file/d/1ZcokS3rfZnWzMZBxaGcTD2gMQ_DWv-oY/view?usp=sharing)
 
 
 ## Resources Used
