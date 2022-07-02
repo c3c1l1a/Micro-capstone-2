@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro capstone 2</title>
+</head>
+<body>
+    <header>
+        <img class="logo icon" src="./assets/img/temp-logo.png">
+        <div class="nav">
+            <img class="hamburger-menu" src="./assets/img/hamburger-menu.png">
+            <ul class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Packages</a></li>
+                <li><a href="">About us</a></li>
+            </ul>
+            <a class=" btn book-now-button"href="#">Book now</a>
+        </div>
+    </header>
+    <main>
+        <template class="card-template">
+            <div class="card">
+                <div class="card-img-container">
+                    <img class="card-img" src="./assets/img/temp-plate.png">
+                </div>
+                <div class="card-details">
+                    <div class="card-details-header">
+                        <h2 class="card-title">Avacado salad</h2>
+                        <p class="likes-count-container">
+                            <i class="fa fa-solid fa-heart"></i>
+                            <sup class="likes-count"></sup>
+                        </p>
+                    </div>
+                    <span class="btn-comment block">Comments</span>
+                    <div class="card-details-body">
+                        <div class="likes-button"> 
+                            <i class="fa fa-solid fa-plus"></i>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template class="comments-popup-template">
+            <dialog class="comment-modal container">
+                <span class="close-modal block icon"> <img src="./assets/img/close.png" alt="comments-icon"> </span>   
+
+                <div class="comment-item">
+                   
+                </div>
+                <form class="comment-form flex" method="dialog">
+                    <h2 class="card-details-header">Add a Comment</h2>
+                    <input name="name" class="form-input" type="text" placeholder="Your name">
+                    <textarea class="form-input" name="comment" id="" cols="30" rows="10" placeholder="Your insights"></textarea>
+                    <button id="commentBtn" class="btn"> Comment </button>
+                </form>
+            </dialog>
+            
+        </template>
+        
+    </main>
+    <footer>
+        <span>Created by Microverse under CC license</span>
+    </footer>
+</body>
+</html>
