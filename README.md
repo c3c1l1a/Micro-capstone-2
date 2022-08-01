@@ -12,8 +12,11 @@ This a single page food app where you can comment and like your favourite meal.
 - Bundled with webpack
 - Gitflow and Github flow 
 
+## Showcase
+![chrome-capture-2022-7-1 (1)](https://user-images.githubusercontent.com/8858461/182115035-4431c462-288e-4cab-8707-66ba9f8db0f5.gif)
 
-## Live Demo (Coming soon)
+
+## [Live Demo](https://foodiewebapp.netlify.app)
 
 ## [Project presentation](https://drive.google.com/file/d/1ZcokS3rfZnWzMZBxaGcTD2gMQ_DWv-oY/view?usp=sharing)
 
